@@ -208,7 +208,7 @@ const BackgroundElements = () => (
         scale: [1, 1.1, 1],
       }}
       transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-      className="absolute -top-20 -right-20 w-96 h-96 bg-olive/5 rounded-full blur-3xl"
+      className="absolute -top-20 -right-20 w-[30rem] h-[30rem] bg-olive/15 rounded-full blur-3xl"
     />
     <motion.div
       animate={{
@@ -588,7 +588,7 @@ type RsvpSubmitStatus = "idle" | "submitting" | "success" | "error";
 const RSVP_SCRIPT_URL =
   (typeof process !== "undefined" &&
     process.env &&
-    process.env.GOOGLE_SHEETS_SCRIPT_URL) ||
+    process.env.VITE_GOOGLE_SHEETS_SCRIPT_URL) ||
   "";
 
 // RSVP Section Component
@@ -610,9 +610,7 @@ const RsvpSection = ({
 
     if (!RSVP_SCRIPT_URL) {
       setSubmitStatus("error");
-      setErrorMessage(
-        "RSVP is not configured. Set GOOGLE_SHEETS_SCRIPT_URL in .env.",
-      );
+      setErrorMessage("RSVP is not configured");
       return;
     }
 
