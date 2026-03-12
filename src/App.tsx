@@ -585,11 +585,7 @@ const MapSection = () => {
 
 type RsvpSubmitStatus = "idle" | "submitting" | "success" | "error";
 
-const RSVP_SCRIPT_URL =
-  (typeof process !== "undefined" &&
-    process.env &&
-    process.env.VITE_GOOGLE_SHEETS_SCRIPT_URL) ||
-  "";
+const RSVP_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SHEETS_SCRIPT_URL ?? "";
 
 // RSVP Section Component
 const RsvpSection = ({
