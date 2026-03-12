@@ -53,14 +53,14 @@ export default function App() {
         aria-hidden
       />
       <BackgroundElements />
-      <main className="relative z-10 max-w-5xl mx-auto px-6 py-12 md:px-12">
+      <main className="relative z-10 max-w-5xl mx-auto px-6 py-6 md:px-12">
         <HeroSection inviteeName={inviteeName} personalized={personalized} />
         <DetailsSection />
         <GallerySection />
         <MapSection />
         <RsvpSection inviteeName={inviteeName} personalized={personalized} />
       </main>
-      <footer className="py-12 text-center text-coffee/60 font-round text-sm">
+      <footer className="py-6 text-center text-coffee/60 font-round text-sm">
         <p>
           © 2026 {WEDDING.names.first} & {WEDDING.names.second}
         </p>
@@ -664,16 +664,16 @@ const RsvpSection = ({
   };
 
   return (
-    <section className="py-24">
+    <section className="py-12">
       <AnimatedSection>
-        <div className="glass-dark p-12 md:p-20 rounded-[4rem] text-cream relative overflow-hidden">
+        <div className="glass-dark px-6 py-12 md:p-20 rounded-[4rem] text-cream relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -mr-32 -mt-32" />
 
           <div className="relative z-10 max-w-2xl mx-auto text-center">
             <h2 className="font-round text-4xl md:text-6xl font-bold mb-6">
               {WEDDING.rsvpTitle}
             </h2>
-            <p className="font-round text-lg text-cream/70 mb-12">
+            <p className="font-round text-lg text-cream/70 mb-6">
               {WEDDING.rsvpDeadlineText}{" "}
               <span className="text-gold font-bold">{WEDDING.rsvpByDate}</span>
             </p>
@@ -766,7 +766,7 @@ const RsvpSection = ({
                     </div>
                   </div>
 
-                  <div className="pt-6">
+                  <div className="pt-3">
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
