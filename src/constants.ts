@@ -26,6 +26,10 @@ export const WEDDING = {
   mapTitle: "The Destination",
   rsvpTitle: "Confirm Your Presence",
   rsvpDeadlineText: "Kindly let us know by",
+  rsvpSuccessAttendingTitle: "You're on the list!",
+  rsvpSuccessAttendingBody: "We can't wait to celebrate this cosmic union with you.",
+  rsvpSuccessDeclinedTitle: "We'll miss you!",
+  rsvpSuccessDeclinedBody: "Thank you for letting us know. We're sorry you can't join us, but we hope our paths cross again soon.",
 } as const;
 
 /** Formatted wedding date for display (e.g. "October 18, 2025") */

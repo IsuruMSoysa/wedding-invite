@@ -679,15 +679,31 @@ const RsvpSection = ({
                   animate={{ opacity: 1, scale: 1 }}
                   className="py-10"
                 >
-                  <div className="inline-flex p-6 bg-gold/20 rounded-full mb-6">
-                    <Heart size={48} className="text-gold fill-gold" />
-                  </div>
-                  <h3 className="font-round text-3xl font-bold mb-4">
-                    You're on the list!
-                  </h3>
-                  <p className="text-cream/60">
-                    We can't wait to celebrate this cosmic union with you.
-                  </p>
+                  {attendance === "no" ? (
+                    <>
+                      <div className="inline-flex p-6 bg-cream/10 rounded-full mb-6 text-cream/40">
+                        <HeartCrack size={48} />
+                      </div>
+                      <h3 className="font-round text-3xl font-bold mb-4">
+                        {WEDDING.rsvpSuccessDeclinedTitle}
+                      </h3>
+                      <p className="text-cream/60">
+                        {WEDDING.rsvpSuccessDeclinedBody}
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <div className="inline-flex p-6 bg-gold/20 rounded-full mb-6">
+                        <Heart size={48} className="text-gold fill-gold" />
+                      </div>
+                      <h3 className="font-round text-3xl font-bold mb-4">
+                        {WEDDING.rsvpSuccessAttendingTitle}
+                      </h3>
+                      <p className="text-cream/60">
+                        {WEDDING.rsvpSuccessAttendingBody}
+                      </p>
+                    </>
+                  )}
                 </motion.div>
               ) : (
                 <motion.form
