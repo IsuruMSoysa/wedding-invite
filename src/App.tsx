@@ -43,7 +43,7 @@ export default function App() {
 
   return (
     <div className="bg-cream text-coffee font-sans min-h-screen overflow-x-hidden selection:bg-maroon/20">
-      <MusicToggle />
+      {/* <MusicToggle /> */}
       <div
         className="fixed inset-0 z-0 w-full max-w-none bg-center bg-no-repeat pointer-events-none opacity-5"
         style={{
@@ -286,39 +286,39 @@ const AnimatedSection = ({
 };
 
 // Music Toggle Component
-const MusicToggle = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
+// const MusicToggle = () => {
+//   const [isPlaying, setIsPlaying] = useState(false);
+//   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const togglePlay = () => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
+//   const togglePlay = () => {
+//     if (!audioRef.current) return;
+//     if (isPlaying) {
+//       audioRef.current.pause();
+//     } else {
+//       audioRef.current.play();
+//     }
+//     setIsPlaying(!isPlaying);
+//   };
 
-  return (
-    <>
-      <audio
-        ref={audioRef}
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-        loop
-      />
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={togglePlay}
-        className="fixed bottom-8 right-8 z-50 p-4 glass text-olive rounded-full shadow-lg border-gold/30"
-        aria-label={isPlaying ? "Pause music" : "Play music"}
-      >
-        {isPlaying ? <Pause size={24} /> : <Music size={24} />}
-      </motion.button>
-    </>
-  );
-};
+//   return (
+//     <>
+//       <audio
+//         ref={audioRef}
+//         src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+//         loop
+//       />
+//       <motion.button
+//         whileHover={{ scale: 1.1 }}
+//         whileTap={{ scale: 0.9 }}
+//         onClick={togglePlay}
+//         className="fixed bottom-8 right-8 z-50 p-4 glass text-olive rounded-full shadow-lg border-gold/30"
+//         aria-label={isPlaying ? "Pause music" : "Play music"}
+//       >
+//         {isPlaying ? <Pause size={24} /> : <Music size={24} />}
+//       </motion.button>
+//     </>
+//   );
+// };
 
 // Hero Section Component
 const HeroSection = ({
