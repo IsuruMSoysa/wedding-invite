@@ -13,23 +13,27 @@ export const WEDDING = {
   venueAddress: "Kurunegala Road, Balagalla, Divulapitiya",
   /** RSVP deadline (display only) */
   rsvpByDate: "May 01, 2026",
-  
+
   // Creative Copy
   tagline: "A Celestial Dance of Two Souls",
   heroGreeting: "In the quiet hum of the universe, our paths converged.",
-  heroInvite: "Join us as we weave our futures together under the canopy of the stars.",
-  nerudaQuote: "I love you without knowing how, or when, or from where. I love you straightforwardly, without complexities or pride; so I love you because I know no other way.",
+  heroInvite:
+    "Join us as we weave our futures together under the canopy of the stars.",
+  nerudaQuote:
+    "I love you without knowing how, or when, or from where. I love you straightforwardly, without complexities or pride; so I love you because I know no other way.",
   nerudaRef: "— Pablo Neruda, Sonnet XVII",
-  
+
   detailsTitle: "The Ceremony & Celebration",
-  galleryTitle: "Our Cosmic Journey",
+  galleryTitle: "Memories from Our Engagement Day",
   mapTitle: "The Destination",
   rsvpTitle: "Confirm Your Presence",
   rsvpDeadlineText: "Kindly let us know by",
   rsvpSuccessAttendingTitle: "You're on the list!",
-  rsvpSuccessAttendingBody: "We can't wait to celebrate this cosmic union with you.",
+  rsvpSuccessAttendingBody:
+    "We can't wait to celebrate this cosmic union with you.",
   rsvpSuccessDeclinedTitle: "We'll miss you!",
-  rsvpSuccessDeclinedBody: "Thank you for letting us know. We're sorry you can't join us, but we hope our paths cross again soon.",
+  rsvpSuccessDeclinedBody:
+    "Thank you for letting us know. We're sorry you can't join us, but we hope our paths cross again soon.",
 } as const;
 
 /** Formatted wedding date for display (e.g. "October 18, 2025") */

@@ -509,12 +509,12 @@ const DetailsSection = () => {
 // Gallery Section Component
 const GallerySection = () => {
   const images = [
-    "https://picsum.photos/seed/picsum1/800/600",
-    "https://picsum.photos/seed/picsum2/600/800",
-    "https://picsum.photos/seed/picsum3/800/600",
-    "https://picsum.photos/seed/picsum4/600/800",
-    "https://picsum.photos/seed/picsum5/800/600",
-    "https://picsum.photos/seed/picsum6/600/800",
+    "./images/1.webp",
+    "./images/2.webp",
+    "./images/3.webp",
+    "./images/5.webp",
+    "./images/6.webp",
+    "./images/4.webp",
   ];
 
   return (
