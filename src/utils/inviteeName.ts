@@ -1,7 +1,7 @@
 /**
- * Converts a URL path slug (e.g. "mr-tom-hanks") into a display name ("Mr. Tom Hanks").
- * Used for personalized invite links like BASEURL/mr-tom-hanks
- */
+* Converts a URL path slug (e.g. "mr-tom-hanks") into a display name ("Mr. Tom Hanks").
+* Used for personalized invite links like BASEURL/mr-tom-hanks
+*/
 
 const HONORIFIC_MAP: Record<string, string> = {
   mr: "Mr.",
@@ -21,11 +21,11 @@ function capitalizeWord(word: string): string {
 }
 
 /**
- * Parses pathname (e.g. "/mr-tom-hanks") into a display name.
- * Empty path or "/" returns a generic label for non-personalized visits.
- */
+* Parses pathname (e.g. "/mr-tom-hanks") into a display name.
+* Empty path or "/" returns a generic label for non-personalized visits.
+*/
 export function parseInviteeName(pathname: string): string {
-  const slug = pathname.replace(/^\/+|\/+$/g, "").trim();
+  const slug = getLastPathSegment(pathname);
   if (!slug) return DEFAULT_GUEST_LABEL;
 
   const parts = slug.split("-").filter(Boolean);
@@ -35,9 +35,30 @@ export function parseInviteeName(pathname: string): string {
 }
 
 /**
- * True when the URL has an invitee slug (not root only).
- */
+* Returns the last non-empty segment of the pathname, or an empty string.
+*/
+export function getLastPathSegment(pathname: string): string {
+  const segments = pathname.split("/").map((s) => s.trim()).filter(Boolean);
+  if (segments.length === 0) return "";
+  return segments[segments.length - 1] ?? "";
+}
+
+/**
+* True when the URL has an invitee slug (not root only).
+*/
 export function hasInviteeSlug(pathname: string): boolean {
-  const slug = pathname.replace(/^\/+|\/+$/g, "").trim();
+  const slug = getLastPathSegment(pathname);
   return slug.length > 0;
+}
+
+/**
+* Returns true if the pathname's last segment exists in the allowed slug list.
+*/
+export function isValidInviteSlug(
+  pathname: string,
+  allowedSlugs: readonly string[],
+): boolean {
+  const slug = getLastPathSegment(pathname);
+  if (!slug) return false;
+  return allowedSlugs.includes(slug);
 }

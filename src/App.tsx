@@ -28,18 +28,31 @@ import {
   getWeddingDateFormatted,
   getGoogleCalendarUrl,
   MAP_EMBED_SRC,
+  ALLOWED_INVITEE_SLUGS,
 } from "./constants";
-import { parseInviteeName, hasInviteeSlug } from "./utils/inviteeName";
+import {
+  parseInviteeName,
+  hasInviteeSlug,
+  isValidInviteSlug,
+} from "./utils/inviteeName";
+import { InvalidInvite } from "./components/InvalidInvite";
 
 // Main App Component
 export default function App() {
-  const inviteeName = parseInviteeName(window.location.pathname);
-  const personalized = hasInviteeSlug(window.location.pathname);
+  const pathname = window.location.pathname;
+  const inviteeName = parseInviteeName(pathname);
+  const personalized = hasInviteeSlug(pathname);
+  const validInvite = isValidInviteSlug(pathname, ALLOWED_INVITEE_SLUGS);
 
   useEffect(() => {
     const baseTitle = `${WEDDING.names.first} & ${WEDDING.names.second} – Wedding`;
-    document.title = personalized ? `${inviteeName} – ${baseTitle}` : baseTitle;
-  }, [inviteeName, personalized]);
+    const title = personalized ? `${inviteeName} – ${baseTitle}` : baseTitle;
+    document.title = validInvite ? title : `Invalid Invite – ${baseTitle}`;
+  }, [inviteeName, personalized, validInvite]);
+
+  if (!validInvite) {
+    return <InvalidInvite />;
+  }
 
   return (
     <div className="bg-cream text-coffee font-sans min-h-screen overflow-x-hidden selection:bg-maroon/20">
