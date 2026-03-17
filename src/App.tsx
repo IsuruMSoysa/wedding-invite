@@ -50,9 +50,9 @@ export default function App() {
     document.title = validInvite ? title : `Invalid Invite – ${baseTitle}`;
   }, [inviteeName, personalized, validInvite]);
 
-  if (!validInvite) {
-    return <InvalidInvite />;
-  }
+  // if (!validInvite) {
+  //   return <InvalidInvite />;
+  // }
 
   return (
     <div className="bg-cream text-coffee font-sans min-h-screen overflow-x-hidden selection:bg-maroon/20">
@@ -67,11 +67,17 @@ export default function App() {
       />
       <BackgroundElements />
       <main className="relative z-10 max-w-5xl mx-auto px-6 py-6 md:px-12">
-        <HeroSection inviteeName={inviteeName} personalized={personalized} />
+        <HeroSection
+          inviteeName={inviteeName}
+          personalized={personalized}
+          validInvite={validInvite}
+        />
         <DetailsSection />
         <GallerySection />
         <MapSection />
-        <RsvpSection inviteeName={inviteeName} personalized={personalized} />
+        {validInvite && (
+          <RsvpSection inviteeName={inviteeName} personalized={personalized} />
+        )}
       </main>
       <footer className="py-6 text-center text-coffee/60 font-round text-sm">
         <p>
@@ -337,11 +343,14 @@ const AnimatedSection = ({
 const HeroSection = ({
   inviteeName,
   personalized,
+  validInvite,
 }: {
   inviteeName: string;
   personalized: boolean;
+  validInvite: boolean;
 }) => {
-  const greeting = personalized ? `Dear ${inviteeName},` : `Welcome,`;
+  const greeting =
+    personalized && validInvite ? `Dear ${inviteeName},` : `Welcome,`;
   return (
     <>
       <header className="relative min-h-[80vh] flex flex-col items-center justify-center text-center py-12">

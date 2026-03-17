@@ -31,7 +31,7 @@ export const ALLOWED_INVITEE_SLUGS = [
   "kavindu",
   "thisal",
   "rahul",
-  "chamathka",
+  "chamaa",
   "shamal",
   "aloka",
   "saminda",
@@ -52,7 +52,7 @@ export const ALLOWED_INVITEE_SLUGS = [
   "thathsara",
   "nipuna",
   "dombe",
-  "praneeth",
+  "praniya",
   "madushi",
   "kisal",
   "tharaka",
@@ -75,7 +75,7 @@ export const ALLOWED_INVITEE_SLUGS = [
   "nandana",
   "batta",
   "dula",
-  "oshan",
+  "osaa",
   "rushan",
   "senali-and-yasintha",
   "sathsara",
@@ -91,6 +91,7 @@ export const ALLOWED_INVITEE_SLUGS = [
   "uvintha",
   "madusanka",
   "gihan-aiya-and-anuththara-akka",
+  "sahan-aiya",
 ] as const;
 
 export const WEDDING = {
