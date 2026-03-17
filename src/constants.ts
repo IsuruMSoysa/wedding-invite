@@ -65,7 +65,7 @@ export const ALLOWED_INVITEE_SLUGS = [
   "ravin",
   "bathi",
   "sahana",
-  "chamod",
+  "chamodaya",
   "jaya",
   "issa",
   "aviya",
