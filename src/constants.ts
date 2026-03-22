@@ -97,6 +97,9 @@ export const ALLOWED_INVITEE_SLUGS = [
   "nipuna-malli",
   "anoma-aunty-and-family",
   "lakiya",
+  "ayesha-akka-and-dasun-aiya",
+  "cheviya-aiya",
+  "ravi-aiya",
 ] as const;
 
 export const WEDDING = {
