@@ -1,6 +1,9 @@
-import { WEDDING } from "../constants";
+type InvalidInviteProps = {
+  firstName: string;
+  secondName: string;
+};
 
-export function InvalidInvite() {
+export function InvalidInvite({ firstName, secondName }: InvalidInviteProps) {
   return (
     <div className="bg-cream text-coffee font-sans min-h-screen flex items-center justify-center px-6">
       <div className="max-w-lg w-full glass p-10 rounded-[3rem] border-maroon/10 text-center">
@@ -14,12 +17,12 @@ export function InvalidInvite() {
         <p className="font-round text-sm text-coffee/60 mb-8">
           If you believe this is a mistake, please reach out to{" "}
           <span className="font-semibold">
-            {WEDDING.names.first} &amp; {WEDDING.names.second}
+            {firstName} &amp; {secondName}
           </span>{" "}
           to get the correct invitation link.
         </p>
         <p className="font-handwritten text-xl text-maroon">
-          With love, {WEDDING.names.first} &amp; {WEDDING.names.second}
+          With love, {firstName} &amp; {secondName}
         </p>
       </div>
     </div>

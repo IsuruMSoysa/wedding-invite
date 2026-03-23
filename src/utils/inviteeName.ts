@@ -11,8 +11,6 @@ const HONORIFIC_MAP: Record<string, string> = {
   prof: "Prof.",
 };
 
-const DEFAULT_GUEST_LABEL = "Dear Guest";
-
 function capitalizeWord(word: string): string {
   if (!word) return word;
   const lower = word.toLowerCase();
@@ -26,10 +24,10 @@ function capitalizeWord(word: string): string {
 */
 export function parseInviteeName(pathname: string): string {
   const slug = getLastPathSegment(pathname);
-  if (!slug) return DEFAULT_GUEST_LABEL;
+  if (!slug) return "Dear Guest";
 
   const parts = slug.split("-").filter(Boolean);
-  if (parts.length === 0) return DEFAULT_GUEST_LABEL;
+  if (parts.length === 0) return "Dear Guest";
 
   return parts.map(capitalizeWord).join(" ");
 }
@@ -61,4 +59,22 @@ export function isValidInviteSlug(
   const slug = getLastPathSegment(pathname);
   if (!slug) return false;
   return allowedSlugs.includes(slug);
+}
+
+export function parseInviteeNameFromSlug(
+  inviteeSlug: string,
+  defaultGuestLabel: string,
+): string {
+  if (!inviteeSlug) return defaultGuestLabel;
+  const parts = inviteeSlug.split("-").filter(Boolean);
+  if (parts.length === 0) return defaultGuestLabel;
+  return parts.map(capitalizeWord).join(" ");
+}
+
+export function isValidInviteeSlug(
+  inviteeSlug: string,
+  allowedSlugs: readonly string[],
+): boolean {
+  if (!inviteeSlug) return false;
+  return allowedSlugs.includes(inviteeSlug);
 }

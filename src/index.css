@@ -13,6 +13,22 @@
   --font-handwritten: "Dancing Script", cursive;
 }
 
+.app-theme.theme-wedding {
+  --color-cream: #FDFCF8;
+  --color-olive: #556B2F;
+  --color-coffee: #6F4E37;
+  --color-maroon: #800000;
+  --color-gold: #D4AF37;
+}
+
+.app-theme.theme-home-coming {
+  --color-cream: #FFF6F8;
+  --color-olive: #B03A5B;
+  --color-coffee: #5B1D2A;
+  --color-maroon: #7A001E;
+  --color-gold: #E8A2B7;
+}
+
 /* Vintage paper texture: warm base + soft gradients for a paper-like feel */
 body {
   background-color: #FDFCF8;
@@ -23,6 +39,14 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
   color: #3E2723;
+}
+
+.theme-home-coming body,
+body:has(.theme-home-coming) {
+  background-image:
+    radial-gradient(circle at 30% 20%, rgba(176, 58, 91, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(122, 0, 30, 0.07) 0%, transparent 45%),
+    linear-gradient(225deg, rgba(232, 162, 183, 0.1) 0%, transparent 45%);
 }
 
 .glass {
