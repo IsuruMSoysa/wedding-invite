@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Heart, HeartCrack, Send } from "lucide-react";
 import { AnimatedSection } from "../shared/AnimatedSection";
 import { type EventContent } from "../../types/template";
+import { useLocation } from "react-router-dom";
 
 type RsvpSubmitStatus = "idle" | "submitting" | "success" | "error";
 
@@ -19,6 +20,8 @@ export function RsvpSection({
   personalized,
   content,
 }: RsvpSectionProps) {
+  const location = useLocation();
+  const isHomeComing = location.pathname.includes("/home-coming");
   const [name, setName] = useState(personalized ? inviteeName : "");
   const [attendance, setAttendance] = useState<"" | "yes" | "no">("");
   const [submitStatus, setSubmitStatus] = useState<RsvpSubmitStatus>("idle");
@@ -50,7 +53,7 @@ export function RsvpSection({
 
     try {
       const body = new URLSearchParams({
-        name: `trimmedName-${content.eventDateTime}`,
+        name: isHomeComing ? `home-coming-${name}` : name,
         attendance,
       });
       const res = await fetch(RSVP_SCRIPT_URL, {

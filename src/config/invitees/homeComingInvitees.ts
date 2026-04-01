@@ -1,1 +1,18 @@
-export const homeComingInvitees = ["isuru", "aruni"] as const;
+export const homeComingInvitees = [
+  "sasiya",
+  "madda",
+  "dilini",
+  "batta",
+  "oshan",
+  "amila-and-nipuni",
+  "ruveesha-and-hasinthaka",
+  "prabodhi-and-asanka",
+  "hashan",
+  "pathuma",
+  "raviya",
+  "dombe",
+  "vihanga",
+  "isuru-malli",
+  "madusha-malli",
+  "hasindu-malli",
+] as const;
