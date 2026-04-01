@@ -12,6 +12,7 @@ export const homeComingInvitees = [
   "raviya",
   "dombe",
   "vihanga",
+  "dula",
   "isuru-malli",
   "madusha-malli",
   "hasindu-malli",
