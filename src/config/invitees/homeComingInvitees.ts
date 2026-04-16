@@ -16,4 +16,6 @@ export const homeComingInvitees = [
   "isuru-malli",
   "madusha-malli",
   "hasindu-malli",
+  "randika-aiya",
+  "mahesh-aiya",
 ] as const;
