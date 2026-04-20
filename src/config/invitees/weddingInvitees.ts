@@ -99,4 +99,8 @@ export const weddingInvitees = [
   "shehan",
   "vikum",
   "pamodith",
+  "hariya",
+  "saradha",
+  "eranga",
+  "pori",
 ] as const;
