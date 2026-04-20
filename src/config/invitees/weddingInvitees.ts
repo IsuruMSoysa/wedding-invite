@@ -103,4 +103,5 @@ export const weddingInvitees = [
   "saradha",
   "eranga",
   "pori",
+  "zanki",
 ] as const;
